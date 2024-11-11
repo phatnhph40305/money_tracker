@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Money_tracker</string>
+    <string name="txt_empty">Empty</string>
+    <string name="txt_default">this is a dafault text</string>
+</resources>

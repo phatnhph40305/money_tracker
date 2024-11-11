@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title=""
+        />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/container"
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/mg_top">
+
+        <LinearLayout
+            android:id="@+id/trackMoneyContainer"
+            android:focusableInTouchMode="true"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/txtAddMoney"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/size_result"
+                    android:background="@color/bg_addMoney"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textSize="@dimen/text_size_medium"
+                    android:text="0"
+                     />
+
+                <TextView
+                    android:id="@+id/txtSubTractMoney"
+                    android:layout_width="0dp"
+                    android:layout_height="@dimen/size_result"
+                    android:background="@color/bg_subTractMoney"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"
+                    android:gravity="center"
+                    android:textSize="@dimen/text_size_medium"
+                    android:text="0"
+                    />
+
+            </LinearLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView"
+                tools:listitem="@layout/adapter_log"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+    <ProgressBar
+        android:id="@+id/loading"
+        android:visibility="visible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+    <TextView
+        android:id="@+id/txtStatus"
+        android:visibility="invisible"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_empty"
+        android:layout_gravity="center"
+        android:textSize="@dimen/text_size_medium"
+        />
+
+
+</FrameLayout>
+
+
